@@ -4,72 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나의 웹페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f4f8; /* 차분한 회색 배경 */
+            color: #424242;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            width: 90%;
+            margin: 20px;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         h1, h2 {
-            color: #333;
+            color: #1e3a5f; /* 네이비 색상 */
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #1e3a5f;
+            display: inline-block;
+            padding-bottom: 5px;
         }
         .profile-picture {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
+            display: block;
+            margin: 0 auto 15px auto;
+            border: 3px solid #1e3a5f;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         li {
-            background: #e9e9e9;
+            background: #f0f4f8;
             margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+        li i {
+            margin-right: 10px;
+            color: #1e3a5f;
+        }
+        p {
+            line-height: 1.4;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .info-section {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .info-section i {
+            margin-right: 10px;
+            color: #1e3a5f;
+        }
+        info-section ul li{
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>나의 웹페이지</h1>
+        <h1>이력서</h1>
         <img src="증명사진.jpg" alt="프로필 사진" class="profile-picture">
 
-        <h2>이름</h2>
-        <p>이세연</p>
+        <div class="info-section">
+            <h2><i class="fas fa-user"></i> 이름</h2>
+            <p>이세연 [ Lee Seyeon ]</p>
+        </div>
 
-        <h2>이메일주소</h2>
-        <p>tpdus0919@dongyang.ac.kr</p>
+        <div class="info-section">
+            <h2><i class="fas fa-envelope"></i> 이메일주소</h2>
+            <p>tpdus0919@dongyang.ac.kr</p>
+        </div>
 
-        <h2>기술스택</h2>
-        <ul>
-            <li>언어: Python, HTML, CSS </li>
-            <li>도구: Git, VSCode</li>
-        </ul>
+        <div class="info-section">
+            <h2><i class="fas fa-laptop-code"></i> 기술스택</h2>
+            <ul>
+                <li><i class="fas fa-code"></i> 언어: Python, HTML, CSS </li>
+                <li><i class="fas fa-tools"></i> 도구: Git, VSCode</li>
+            </ul>
+        </div>
 
-        <h2>대학정보</h2>
-        <p>학교: 동양미래대학교</p>
-        <p>학과: 컴퓨터소프트웨어공학과</p>
-        <p>입학년도: 2024년</p>
+        <div class="info-section">
+            <h2><i class="fas fa-university"></i> 대학정보</h2>
+            <p>학교: 동양미래대학교</p>
+            <p>학과: 컴퓨터소프트웨어공학과</p>
+            <p>입학년도: 2024년</p>
+        </div>
 
-        <h2>기술개발 경험</h2>
-        <p>현재 진행중인 수업: SW개발도구활용 / 웹프로그래밍 기초</p>
-        <p>고등학교 때 학습했던 내용: 기본 프로그래밍, 알고리즘</p>
+        <div class="info-section">
+            <h2><i class="fas fa-project-diagram"></i> 기술개발 경험</h2>
+            <p>현재 진행중인 수업: SW개발도구활용 / 웹프로그래밍 기초</p>
+            <p>고등학교 때 학습했던 내용: 기본 프로그래밍, 알고리즘</p>
+        </div>
 
-        <h2>관심 기술분야</h2>
-        <p>분야: 웹 개발</p>
+        <div class="info-section">
+            <h2><i class="fas fa-lightbulb"></i> 관심 기술분야</h2>
+            <p>분야: 웹 개발</p>
+        </div>
 
-        <h2>기타</h2>
-        <p>여기에 추가하고 싶은 내용을 작성하세요.</p>
+        <div class="info-section">
+            <h2><i class="fas fa-ellipsis-h"></i> 기타</h2>
+            <p>잘 부탁드립니다 :)</p>
+        </div>
     </div>
 </body>
 </html>
